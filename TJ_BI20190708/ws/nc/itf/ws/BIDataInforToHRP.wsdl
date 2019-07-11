@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+jaxb:version="2.0"
+xmlns:ns0="http://ws.itf.nc/BIDataInforToHRP"
+targetNamespace="http://ws.itf.nc/BIDataInforToHRP">
+
+<jaxws:bindings>
+	<jaxws:package name="nc.itf.ws"/>
+</jaxws:bindings>
+
+<wsdl:types>
+   <xsd:schema xmlns:ns="http://ws.itf.nc/BIDataInforToHRP"
+			attributeFormDefault="unqualified"
+			elementFormDefault="unqualified"
+			targetNamespace="http://ws.itf.nc/BIDataInforToHRP" jaxb:version="2.0">
+	<xsd:annotation>
+    	<xsd:appinfo>
+   			<jaxb:schemaBindings>
+    			<jaxb:package name="nc.itf.ws"/>
+    		</jaxb:schemaBindings>
+   		</xsd:appinfo>
+   	</xsd:annotation>
+	<xsd:element name="AcceptMessage">
+         <xsd:complexType>
+            <xsd:sequence>
+				<xsd:element name="string"  minOccurs="0" nillable="true" type="xsd:string"/>
+             </xsd:sequence>  
+         </xsd:complexType>
+     </xsd:element>
+	<xsd:element name="AcceptMessageResponse">
+         <xsd:complexType>
+            <xsd:sequence>
+				<xsd:element name="return"  minOccurs="0" nillable="true" type="xsd:string"/>
+             </xsd:sequence>  
+         </xsd:complexType>
+     </xsd:element>
+   </xsd:schema>
+</wsdl:types>
+    <wsdl:message name="AcceptMessageRequest">
+        <wsdl:part name="parameters"  element="ns0:AcceptMessage"/>
+    </wsdl:message>
+    <wsdl:message name="AcceptMessageResponse">
+        <wsdl:part name="parameters"  element="ns0:AcceptMessageResponse"/>
+    </wsdl:message>
+
+    <wsdl:portType name="BIDataInforToHRPPortType">
+        <wsdl:operation name="AcceptMessage">
+            <wsdl:input message="ns0:AcceptMessageRequest" wsaw:Action="urn:AcceptMessage"/>
+            <wsdl:output message="ns0:AcceptMessageResponse" wsaw:Action="urn:AcceptMessageResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    
+    
+    <wsdl:binding name="BIDataInforToHRPSOAP11Binding" type="ns0:BIDataInforToHRPPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="AcceptMessage">
+            <soap:operation soapAction="urn:AcceptMessage" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BIDataInforToHRP">
+        <wsdl:port name="BIDataInforToHRPSOAP11port_http" binding="ns0:BIDataInforToHRPSOAP11Binding">
+            <soap:address location="http://localhost/uapws/service/BIDataInforToHRP"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

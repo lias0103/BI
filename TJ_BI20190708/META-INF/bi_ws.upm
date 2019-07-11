@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module name="uap">
+  <public>
+	<component remote="true" singleton="true" tx="CMT">
+	  <interface>nc.itf.ws.BIDataInforToHRP</interface>
+	  <implementation>nc.ws.impl.BIDataInforToHRPImpl</implementation>
+	</component>
+		<component name="BIDataInforToHRP">
+			<interface>nc.itf.ws.BIDataInforToHRP</interface>
+			<implementation>nc.ws.impl.BIDataInforToHRPImpl</implementation>
+			<extension class="nc.uap.ws.deploy.OxbWSExtensionProcessor">
+				<wsdl>/nc/itf/ws/BIDataInforToHRP.wsdl</wsdl>
+				<address>/BIDataInforToHRP</address>
+			</extension>
+		</component>
+</public> 
+</module>

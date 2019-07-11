@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="uap/classes" path="uap/src/public"/>
+	<classpathentry kind="src" output="uap/classes" path="uap/src/client"/>
+	<classpathentry kind="src" output="uap/classes" path="uap/src/private"/>
+	<classpathentry kind="src" output="uap/classes" path="uap/resources"/>
+	<classpathentry kind="src" output="uap/classes" path="uap/src/test"/>
+	<classpathentry kind="src" output="out/resources" path="resources"/>
+	<classpathentry kind="src" path="ws"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Ant_Library"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Product_Common_Library"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Middleware_Library"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Framework_Library"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Module_Public_Library"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Module_Client_Library"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Module_Private_Library"/>
+	<classpathentry kind="con" path="com.yonyou.studio.ria.core.library.container/Module_Lang_Library"/>
+	<classpathentry kind="lib" path="D:/tongjixm/fastjson-1.2.57.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
